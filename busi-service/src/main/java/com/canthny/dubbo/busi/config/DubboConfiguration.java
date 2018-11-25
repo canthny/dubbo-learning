@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author： Canthny
- * @Description： //TODO 那么请问：这个类是干嘛的呢？
- * @Description：
+ * @Description： dubbo配置类
  * @Date： Created in 2018/11/6 19:50
  */
 @Configuration
@@ -18,7 +17,7 @@ public class DubboConfiguration {
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName("consumer-test");
+        applicationConfig.setName("busi-service");
         return applicationConfig;
     }
 

@@ -1,6 +1,7 @@
 package com.canthny.dubbo.account.config;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +17,14 @@ public class DubboConfiguration {
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName("provider-test");
+        applicationConfig.setName("account-service");
         return applicationConfig;
+    }
+
+    @Bean
+    public ProviderConfig providerConfig(){
+        ProviderConfig providerConfig = new ProviderConfig();
+        return providerConfig;
     }
 
     @Bean
