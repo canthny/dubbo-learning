@@ -1,5 +1,5 @@
 # dubbo-learning
-## dubbo调用demo
+## dubbo调用demo，springboot+dubbo整合
 account-service账户服务提供者
 busi-service业务服务提供者（调用账户服务）
 account-api接口
