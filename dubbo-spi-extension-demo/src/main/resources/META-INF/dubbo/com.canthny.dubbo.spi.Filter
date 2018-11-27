@@ -1,0 +1,2 @@
+afilter=com.canthny.dubbo.spi.impl.AFilter
+bfilter=com.canthny.dubbo.spi.impl.BFilter

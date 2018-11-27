@@ -1,5 +1,6 @@
 package com.canthny.dubbo.spi;
 
+import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.Adaptive;
 import com.alibaba.dubbo.common.extension.SPI;
 
@@ -9,8 +10,9 @@ import com.alibaba.dubbo.common.extension.SPI;
  * @Date： Created in 2018/11/25 20:14
  */
 @SPI("syn")
+//注解里的value值表示当没有找到Adaptive类的时候取的默认值
 public interface TestSpiDemoService {
 
-    @Adaptive
-    String testSpi();
+    @Adaptive("type")
+    String testSpi(URL url);
 }
