@@ -1,6 +1,7 @@
 package com.canthny.dubbo.account.config;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,11 @@ public class DubboConfiguration {
     @Bean
     public ProviderConfig providerConfig(){
         ProviderConfig providerConfig = new ProviderConfig();
+        ProtocolConfig protocolConfig = new ProtocolConfig();
+        protocolConfig.setName("dubbo");
+//        protocolConfig.setName("hessian");
+//        protocolConfig.setServer("tomcat");
+        providerConfig.setProtocol(protocolConfig);
         return providerConfig;
     }
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestAction {
 
+//    @Reference(url="hessian://192.168.118.1:80/hessian/test")
     @Reference
     AccountOperateService accountOperateService;
 

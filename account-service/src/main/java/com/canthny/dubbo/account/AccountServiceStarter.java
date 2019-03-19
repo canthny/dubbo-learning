@@ -15,6 +15,9 @@ public class AccountServiceStarter {
 
     public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(AccountServiceStarter.class,args);
+        while (true){
+
+        }
 //        Thread.sleep(999999999);
     }
 }
