@@ -9,7 +9,7 @@ import com.canthny.dubbo.spi.Filter;
  * @Description： Afilter实现类
  * @Date： Created in 2018/11/26 1:33
  */
-@Activate
+//@Activate
 public class AFilter implements Filter{
     @Override
     public Object invoker() {

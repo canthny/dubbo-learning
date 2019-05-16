@@ -13,6 +13,11 @@ public class AccountOperateServiceImpl implements AccountOperateService{
 
     @Override
     public String operateAccount(String accountNo) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "operateAccount is success:"+accountNo;
     }
 }

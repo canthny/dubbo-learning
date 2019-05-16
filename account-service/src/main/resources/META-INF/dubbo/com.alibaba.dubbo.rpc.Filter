@@ -1,1 +1,2 @@
 tracing=com.canthny.dubbo.common.filter.TracingFilter
+tps=com.alibaba.dubbo.rpc.filter.TpsLimitFilter
