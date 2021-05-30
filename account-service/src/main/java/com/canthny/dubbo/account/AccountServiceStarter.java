@@ -20,7 +20,7 @@ public class AccountServiceStarter {
     public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(AccountServiceStarter.class,args);
 //        setLimit();
-//        Thread.sleep(999999999);
+        Thread.sleep(999999999);
     }
 
     public static void setLimit() {

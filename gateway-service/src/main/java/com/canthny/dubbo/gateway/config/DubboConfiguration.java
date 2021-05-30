@@ -1,15 +1,16 @@
-package com.canthny.dubbo.busi.config;
+package com.canthny.dubbo.gateway.config;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ConsumerConfig;
+import com.alibaba.dubbo.config.ProtocolConfig;
+import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author： Canthny
- * @Description： dubbo配置类
- * @Date： Created in 2018/11/6 19:50
+ * @Description： dubbo配置
+ * @Date： Created in 2018/11/6 16:30
  */
 @Configuration
 public class DubboConfiguration {
@@ -17,16 +18,20 @@ public class DubboConfiguration {
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName("busi-service");
+        applicationConfig.setName("gateway-service");
         return applicationConfig;
     }
 
     @Bean
-    public ConsumerConfig consumerConfig() {
-        ConsumerConfig consumerConfig = new ConsumerConfig();
-        consumerConfig.setTimeout(5000);
-//        consumerConfig.setClient();
-        return consumerConfig;
+    public ProviderConfig providerConfig(){
+        ProviderConfig providerConfig = new ProviderConfig();
+        ProtocolConfig protocolConfig = new ProtocolConfig();
+        protocolConfig.setName("dubbo");
+        protocolConfig.setPort(20881);
+//        protocolConfig.setName("hessian");
+//        protocolConfig.setServer("tomcat");
+        providerConfig.setProtocol(protocolConfig);
+        return providerConfig;
     }
 
     @Bean

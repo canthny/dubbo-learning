@@ -5,4 +5,9 @@ public class AccountOperateServiceMock implements AccountOperateService{
     public String operateAccount(String accountNo) {
         return "mock is open,return null";
     }
+
+    @Override
+    public AccountInfo getAccountInfo(AccountReq accountReq) {
+        return null;
+    }
 }

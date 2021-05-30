@@ -27,6 +27,7 @@ public class DubboConfiguration {
         ProviderConfig providerConfig = new ProviderConfig();
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName("dubbo");
+        protocolConfig.setPort(20880);
 //        protocolConfig.setName("hessian");
 //        protocolConfig.setServer("tomcat");
         providerConfig.setProtocol(protocolConfig);

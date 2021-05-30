@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date： Created in 2018/11/6 17:09
  */
 @SpringBootApplication
-@DubboComponentScan(basePackages = "com.canthny.dubbo.account.api")
+@DubboComponentScan(basePackages = {"com.canthny.dubbo.busi","com.canthny.dubbo.account.api"})
 public class BusiServiceStarter {
 
     public static void main(String[] args) {

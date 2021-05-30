@@ -8,4 +8,6 @@ package com.canthny.dubbo.account.api;
 public interface AccountOperateService {
 
     String operateAccount(String accountNo);
+
+    AccountInfo getAccountInfo(AccountReq accountReq);
 }
