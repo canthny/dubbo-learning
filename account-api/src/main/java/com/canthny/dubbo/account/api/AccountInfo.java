@@ -10,10 +10,13 @@ public class AccountInfo implements Serializable {
 
     private String accountName;
 
-    public AccountInfo(Long id,String accountNo,String accountName){
+    private AccountSubInfo accountSubInfo;
+
+    public AccountInfo(Long id,String accountNo,String accountName,AccountSubInfo accountSubInfo){
         this.id = id;
         this.accountName = accountName;
         this.accountNo = accountNo;
+        this.accountSubInfo = accountSubInfo;
     }
 
     public Long getId() {
@@ -38,6 +41,14 @@ public class AccountInfo implements Serializable {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+
+    public AccountSubInfo getAccountSubInfo() {
+        return accountSubInfo;
+    }
+
+    public void setAccountSubInfo(AccountSubInfo accountSubInfo) {
+        this.accountSubInfo = accountSubInfo;
     }
 
     @Override

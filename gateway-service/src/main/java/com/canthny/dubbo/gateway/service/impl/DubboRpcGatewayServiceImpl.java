@@ -1,11 +1,13 @@
 package com.canthny.dubbo.gateway.service.impl;
 
+import com.alibaba.dubbo.common.utils.PojoUtils;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.service.GenericService;
 import com.alibaba.fastjson.JSON;
+import com.canthny.dubbo.account.api.AccountOperateService;
 import com.canthny.dubbo.common.filter.gateway.DubboRpcGatewayReq;
 import com.canthny.dubbo.common.filter.gateway.DubboRpcGatewayResp;
 import com.canthny.dubbo.common.filter.gateway.DubboRpcGatewayService;
@@ -43,15 +45,16 @@ public class DubboRpcGatewayServiceImpl implements DubboRpcGatewayService {
             System.out.println(JSON.toJSONString(result));
             if(result!=null){
                 //请求接口可以指定响应参数的class
-                Class returnClazz = req.getReturnClazz();
-                if(returnClazz==null){
-                    //如果没有则直接从泛化调用的map结果里直接取也可以
-                    String resultClassStr = (String)((Map)result).get("class");
-                    returnClazz = Class.forName(resultClassStr);
-                }
-                //序列化成指定的class对象即可
-                String returnJson = GsonUtil.toJsonString(result);
-                result = GsonUtil.fromJson(returnClazz, returnJson);
+//                Class returnClazz = req.getReturnClazz();
+//                if(returnClazz==null){
+//                    //如果没有则直接从泛化调用的map结果里直接取也可以
+//                    String resultClassStr = (String)((Map)result).get("class");
+//                    returnClazz = Class.forName(resultClassStr);
+//                }
+//                //序列化成指定的class对象即可
+//                String returnJson = GsonUtil.toJsonString(result);
+//                result = GsonUtil.fromJson(returnClazz, returnJson);
+                result = PojoUtils.realize(result,req.getReturnClazz());
             }
             return new DubboRpcGatewayResp(result);
         }catch (Exception e){
